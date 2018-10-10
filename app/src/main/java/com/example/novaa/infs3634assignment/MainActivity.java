@@ -30,6 +30,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-//PLEASE WORK
-/ji
