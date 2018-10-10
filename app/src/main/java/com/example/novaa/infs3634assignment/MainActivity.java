@@ -30,9 +30,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-<<<<<<< HEAD
-
-//PLEASE WORK
-//ji
-=======
->>>>>>> 01e23bf6580900f684d8df3eeeecd508ae3134e2
