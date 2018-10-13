@@ -40,4 +40,9 @@ public class Topics {
     public void setPath(String path) {
         this.path = path;
     }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }
