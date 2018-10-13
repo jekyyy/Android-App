@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,17 +23,25 @@ public class TopicList extends AppCompatActivity {
         listView = findViewById(R.id.listview);
         topics = TopicDatabase.getTopicsArrayList();
 
-        ArrayAdapter<Topics> adapter = new ArrayAdapter<>(this,
-                R.layout.activity_topic_list2, topics);
+        ArrayAdapter<Topics> adapter = new ArrayAdapter<>(this, R.layout.topic_item, topics);
 
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Topics clicked = (Topics) adapterView.getItemAtPosition(i);
+                System.out.println(adapterView.getItemAtPosition(i));
 
-                    // Will need to change clicked.getClass() because pretty sure that is not how its done...
-                Intent intent = new Intent(TopicList.this, clicked.getClass());
+
+                Intent intent = new Intent(TopicList.this, TopicContentTEST.class);
+                Bundle extras = new Bundle();
+                extras.putInt("topicId", clicked.getId());
+                extras.putString("topicPath", clicked.getPath());
+                extras.putString("topicTitle", clicked.getName());
+                intent.putExtras(extras);
+                startActivity(intent);
+
             }
         });
     }

@@ -10,6 +10,12 @@ public class Topics {
         this.setName(name);
     }
 
+    public Topics(int id, String name, String path){
+        this.setId(id);
+        this.setName(name);
+        this.setPath(path);
+    }
+
 
     public int getId() {
         return id;
