@@ -20,9 +20,15 @@ public class TopicContentTEST extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        int topicId = extras.getInt("topidId");
+        int topicId = extras.getInt("topicId");
         String title = extras.getString("topicTitle");
-        String content = extras.getString("topicPath");
+        String path = extras.getString("topicPath");
+
+        //Right now the pages content is static and assigned. We need to figure out a way to get the string from the string.xml file
+        //and pass that through the intents. 
+
+        String content = getResources().getString(R.string.large_text);
+
 
 
         titleView.setText(title);
