@@ -31,7 +31,8 @@
             android:name=".TopicContent"
             android:label="@string/title_activity_topic_content"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TopicContentTEST"></activity>
+        <activity android:name=".TopicContentTEST" />
+        <activity android:name=".QuizActivity"></activity>
     </application>
 
 </manifest>

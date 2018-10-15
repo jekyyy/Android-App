@@ -39,4 +39,44 @@
     android:layout_marginBottom="40dp"
     android:id="@+id/question"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inheritance"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="3dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Encapsulation"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="3dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice2"/>
+
+    <Button
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Polymorphism"
+    android:background="#0091EA"
+    android:textColor="#fff"
+    android:padding="3dp"
+    android:layout_marginBottom="24dp"
+    android:id="@+id/choice3"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compilation"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="3dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice4"/>
+
 </LinearLayout>
