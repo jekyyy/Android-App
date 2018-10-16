@@ -3,19 +3,19 @@ package com.example.novaa.infs3634assignment;
 public class Topics {
     private int id;
     private String name;
-    private String path;
 
     public Topics(int id, String name){
         this.setId(id);
         this.setName(name);
     }
 
+    /*
     public Topics(int id, String name, String path){
         this.setId(id);
         this.setName(name);
         this.setPath(path);
     }
-
+    */
 
     public int getId() {
         return id;
@@ -33,6 +33,7 @@ public class Topics {
         this.name = name;
     }
 
+    /*
     public String getPath() {
         return path;
     }
@@ -40,6 +41,7 @@ public class Topics {
     public void setPath(String path) {
         this.path = path;
     }
+    */
 
     @Override
     public String toString(){

@@ -37,7 +37,6 @@ public class TopicList extends AppCompatActivity {
                 Intent intent = new Intent(TopicList.this, TopicContentTEST.class);
                 Bundle extras = new Bundle();
                 extras.putInt("topicId", clicked.getId());
-                extras.putString("topicPath", clicked.getPath());
                 extras.putString("topicTitle", clicked.getName());
                 intent.putExtras(extras);
                 startActivity(intent);
