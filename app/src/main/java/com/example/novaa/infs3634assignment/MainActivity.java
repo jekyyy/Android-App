@@ -17,28 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 
-        beginModule.setOnClickListener(new View.OnClickListener(){
+        beginModule.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TopicList.class);
 
                 startActivity(intent);
-
-
             }
         });
     }
-
-    public void StartQuiz(View view) {
-        Intent intent = new Intent(this, QuizActivity.class);
-        startActivity(intent);
-    }
 }
-
-
-//AIzaSyABWcNSaUm33m2v3mnChLKz5-_dfggdcrs
