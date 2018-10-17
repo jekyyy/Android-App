@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 
@@ -26,9 +28,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TopicList.class);
 
                 startActivity(intent);
+
+
             }
         });
     }
+
+    public void StartQuiz(View view) {
+        Intent intent = new Intent(this, QuizActivity.class);
+        startActivity(intent);
+    }
 }
 
-//JACKY EDITED
+
+//AIzaSyABWcNSaUm33m2v3mnChLKz5-_dfggdcrs
