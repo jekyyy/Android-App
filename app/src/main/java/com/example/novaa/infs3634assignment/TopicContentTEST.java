@@ -99,5 +99,4 @@ public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlay
 
 }
 
-//Todo: Ask - "If I put a button that is aligned below my ListView (inside my ScrollView), will it be at the bottom of the scroll?
-//Todo: If so, can I do the same thing but embed/add a youtube video. If not, how can i do it?
+//TODO: Throw some more meat into onInitializationSuccess and Failure (log.d, toast messages etc)
