@@ -29,6 +29,7 @@ public class TopicContentTEST extends AppCompatActivity {
 
 
         final String TEST = Integer.toString(topicId);
+        final String abc = title;
 
         //Todo: Ask how I can solve this.
 
@@ -60,13 +61,19 @@ public class TopicContentTEST extends AppCompatActivity {
                     break;
             }
             return content;
+            }
+
+        protected void onPostExecute(String content){
+
+            titleView.setText(abc);
+            contentView.setText(content);
+
         }
     }.execute();
 
-        titleView.setText(title);
-        contentView.setText(content);
+
     }
 }
 
 //Todo: Ask - "If I put a button that is aligned below my ListView (inside my ScrollView), will it be at the bottom of the scroll?
-//Todo: If so, can I do the same thign but embed/add a youtube video. If not, how can i do it?
+//Todo: If so, can I do the same thing but embed/add a youtube video. If not, how can i do it?
