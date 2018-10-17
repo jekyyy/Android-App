@@ -19,7 +19,9 @@
          -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyABWcNSaUm33m2v3mnChLKz5-_dfggdc" />
+
+        //missing 2 letters
 
         <activity
             android:name="com.example.novaa.infs3634assignment.YoutubePlayer"
