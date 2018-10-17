@@ -30,8 +30,6 @@ public class TopicContentTEST extends AppCompatActivity {
         title = extras.getString("topicTitle");
 
 
-        //Todo: Ask how I can solve this.
-
         new AsyncTask<String, Void, String>() {
             @Override
             protected String doInBackground(String... strings) {
