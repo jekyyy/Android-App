@@ -12,6 +12,8 @@ public class TopicContentTEST extends AppCompatActivity {
     TextView titleView;
     TextView contentView;
     String content;
+    int topicId;
+    String title;
 
     @SuppressLint("StaticFieldLeak")
     @Override
@@ -24,52 +26,49 @@ public class TopicContentTEST extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        int topicId = extras.getInt("topicId");
-        String title = extras.getString("topicTitle");
+        topicId = extras.getInt("topicId");
+        title = extras.getString("topicTitle");
 
-
-        final String TEST = Integer.toString(topicId);
-        final String abc = title;
 
         //Todo: Ask how I can solve this.
 
-    new AsyncTask<String,Void,String>() {
-        @Override
-        protected String doInBackground(String... strings) {
+        new AsyncTask<String, Void, String>() {
+            @Override
+            protected String doInBackground(String... strings) {
 
-            switch (TEST) {
-                case "1":
-                    content = getResources().getString(R.string.OOP);
-                    break;
-                case "2":
-                    content = getResources().getString(R.string.Attributes);
-                    break;
-                case "3":
-                    content = getResources().getString(R.string.Methods);
-                    break;
-                case "4":
-                    content = getResources().getString(R.string.Abstraction);
-                    break;
-                case "5":
-                    content = getResources().getString(R.string.Polymorphism);
-                    break;
-                case "6":
-                    content = getResources().getString(R.string.Inheritance);
-                    break;
-                case "7":
-                    content = getResources().getString(R.string.Encapsulation);
-                    break;
+                switch (topicId) {
+                    case 1:
+                        content = getResources().getString(R.string.OOP);
+                        break;
+                    case 2:
+                        content = getResources().getString(R.string.Attributes);
+                        break;
+                    case 3:
+                        content = getResources().getString(R.string.Methods);
+                        break;
+                    case 4:
+                        content = getResources().getString(R.string.Abstraction);
+                        break;
+                    case 5:
+                        content = getResources().getString(R.string.Polymorphism);
+                        break;
+                    case 6:
+                        content = getResources().getString(R.string.Inheritance);
+                        break;
+                    case 7:
+                        content = getResources().getString(R.string.Encapsulation);
+                        break;
+                }
+                return content;
             }
-            return content;
+
+            protected void onPostExecute(String content) {
+
+                titleView.setText(title);
+                contentView.setText(content);
+
             }
-
-        protected void onPostExecute(String content){
-
-            titleView.setText(abc);
-            contentView.setText(content);
-
-        }
-    }.execute();
+        }.execute();
 
 
     }

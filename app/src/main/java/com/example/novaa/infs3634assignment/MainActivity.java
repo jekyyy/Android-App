@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 
-        beginModule.setOnClickListener(new View.OnClickListener(){
+        beginModule.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TopicList.class);
 
                 startActivity(intent);
@@ -30,5 +30,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-//JACKY EDITED
