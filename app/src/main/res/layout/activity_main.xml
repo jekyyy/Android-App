@@ -15,7 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="45dp"
-        android:text="INFS1609  Object Oriented Programming"
+        android:text="INFS1609 Object Oriented Programming"
         android:textAlignment="center"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="StartQuiz"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="StartQuiz"
+        tools:layout_editor_absoluteY="139dp
+"/>
 
 </android.support.constraint.ConstraintLayout>

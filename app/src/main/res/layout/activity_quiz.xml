@@ -2,10 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_quiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context=".QuizActivity">
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -33,7 +39,7 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:text="Which of the following is not an OOP concept in Java?"
+    android:text="Which of the following is NOT an OOP concept in Java?"
     android:textSize="20sp"
     android:padding="8dp"
     android:layout_marginBottom="40dp"
@@ -61,13 +67,13 @@
 
     <Button
         android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Polymorphism"
-    android:background="#0091EA"
-    android:textColor="#fff"
-    android:padding="3dp"
-    android:layout_marginBottom="24dp"
-    android:id="@+id/choice3"/>
+        android:layout_height="wrap_content"
+        android:text="Polymorphism"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="3dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice3"/>
 
     <Button
         android:layout_width="match_parent"
