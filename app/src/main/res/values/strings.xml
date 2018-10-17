@@ -59,9 +59,9 @@
         "Convert OOP website to xml here."
     </string>
     <string name="Attributes">
-        "Convert OOP website to xml here."
+        "Convert attributes website to xml here."
     </string>
     <string name="Methods">
-        "Convert OOP website to xml here."
+        "Convert method website to xml here."
     </string>
 </resources>
