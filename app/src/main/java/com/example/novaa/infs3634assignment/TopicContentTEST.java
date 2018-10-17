@@ -5,15 +5,24 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
-public class TopicContentTEST extends AppCompatActivity {
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
+
+
+public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     TextView titleView;
     TextView contentView;
     String content;
     int topicId;
     String title;
+    String youtubePath;
+    YouTubePlayerView youtubeView;
 
     @SuppressLint("StaticFieldLeak")
     @Override
@@ -24,12 +33,15 @@ public class TopicContentTEST extends AppCompatActivity {
         titleView = (TextView) findViewById(R.id.titleText);
         contentView = (TextView) findViewById(R.id.contentText);
 
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         topicId = extras.getInt("topicId");
         title = extras.getString("topicTitle");
+        youtubePath = extras.getString("topicVideo");
 
 
+        //This is how the figures out which content to display, depending on what was clicked.
         new AsyncTask<String, Void, String>() {
             @Override
             protected String doInBackground(String... strings) {
@@ -69,7 +81,22 @@ public class TopicContentTEST extends AppCompatActivity {
         }.execute();
 
 
+        youtubeView = findViewById(R.id.youtubePlayer);
+        youtubeView.initialize(YoutubeConfig.API_KEY, this);
+
+
     }
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+        youTubePlayer.cueVideo(youtubePath);
+    }
+
+    @Override
+    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+    }
+
 }
 
 //Todo: Ask - "If I put a button that is aligned below my ListView (inside my ScrollView), will it be at the bottom of the scroll?

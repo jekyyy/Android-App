@@ -38,6 +38,7 @@ public class TopicList extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putInt("topicId", clicked.getId());
                 extras.putString("topicTitle", clicked.getName());
+                extras.putString("topicVideo", clicked.getYoutubePath());
                 intent.putExtras(extras);
                 startActivity(intent);
 
