@@ -3,19 +3,20 @@ package com.example.novaa.infs3634assignment;
 public class Topics {
     private int id;
     private String name;
+    private String youtubePath;
 
     public Topics(int id, String name){
         this.setId(id);
         this.setName(name);
     }
 
-    /*
-    public Topics(int id, String name, String path){
+
+    public Topics(int id, String name, String youtubePath){
         this.setId(id);
         this.setName(name);
-        this.setPath(path);
+        this.setYoutubePath(youtubePath);
     }
-    */
+
 
     public int getId() {
         return id;
@@ -33,15 +34,15 @@ public class Topics {
         this.name = name;
     }
 
-    /*
-    public String getPath() {
-        return path;
+
+    public String getYoutubePath() {
+        return youtubePath;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setYoutubePath(String youtubePath) {
+        this.youtubePath = youtubePath;
     }
-    */
+
 
     @Override
     public String toString(){
