@@ -9,15 +9,32 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //created button for 'Start Quiz' which takes user to QuizActivity (Multiple Choice Quiz)
+    private Button button;
+
     Button beginModule;
     TextView intro;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        beginModule = findViewById(R.id.beginModule);
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            //https://www.youtube.com/watch?v=onJB8g504mw was used as a source on how to link the MainActivity to the QuizActivity
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        beginModule = findViewById(R.id.beginModule2);
         intro = findViewById(R.id.intro);
 
         beginModule.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(intent);
             }
+
         });
     }
 }
