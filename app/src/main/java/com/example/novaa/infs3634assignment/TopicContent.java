@@ -35,10 +35,12 @@ public class TopicContent extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_content);
 
-
+        //Links the toolbar utilised in the xml. Note that this was one of the default activites we
+        //can choose to create.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //TODO: Make it so that if clicked, itll show a quick tip on how to remember the topic.
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,13 +51,17 @@ public class TopicContent extends AppCompatActivity
         });
         */
 
+        /*
+        Originally we tried using YouTubePlayerView to display the video. However as we needed to
+        extend AppCompactActivity for the toolbar to work, we decided to implement a Fragment instead.
+         */
         YouTubePlayerSupportFragment frag =
                 (YouTubePlayerSupportFragment) getSupportFragmentManager().findFragmentById(R.id.youtubeFragment);
         frag.initialize(YoutubeConfig.API_KEY, this);
 
         contentView = (TextView) findViewById(R.id.contentText);
 
-
+        //Intent and bundle is received and the contents are then assigned to variables.
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         topicId = extras.getInt("topicId");
@@ -65,6 +71,8 @@ public class TopicContent extends AppCompatActivity
         //We realized that the title did not fit as it was too long. To counteract this, we utilised this 'if' statement.
         if (topicId == 1) {
             setTitle("OOP");
+        } else if (topicId == 3){
+            setTitle("Methods");
         } else {
             setTitle(title);
         }
@@ -75,6 +83,8 @@ public class TopicContent extends AppCompatActivity
             @Override
             protected String doInBackground(String... strings) {
 
+                //The bulk of the content were stored in strings resource file as storing them in the
+                //Topic Database would be too chunky.
                 switch (topicId) {
                     case 1:
                         content = getResources().getString(R.string.OOP);

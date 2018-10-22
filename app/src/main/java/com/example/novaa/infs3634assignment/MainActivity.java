@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //referencing and linking startQuiz button.
-        //when user clicks on the startQuiz button, open and start QuizActivity activity.
+        //Referencing and linking startQuiz button.
+        //When user clicks on the startQuiz button, open and start QuizActivity activity.
         button = (Button) findViewById(R.id.startQuiz);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //referencing beginModule to its button.
-        //when user clicks on beginModule button, open and start TopicList activity.
+        //Referencing beginModule to its button.
+        //When user clicks on beginModule button, open and start TopicList activity.
         beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 

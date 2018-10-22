@@ -1,5 +1,9 @@
 package com.example.novaa.infs3634assignment;
 
+/*This class is a typical Object Class for creating 'Topics', which we will be using in TopicList.java
+file to display teach lesson. Each topic has an id, name and youtube path contains a youtube video
+to further enhance the students knowledge. */
+
 public class Topics {
     private int id;
     private String name;
@@ -10,7 +14,6 @@ public class Topics {
         this.setName(name);
         this.setYoutubePath(youtubePath);
     }
-
 
     public int getId() {
         return id;
@@ -37,7 +40,8 @@ public class Topics {
         this.youtubePath = youtubePath;
     }
 
-
+    // This method is used to display the actual name of the Topic on the View. Without this method,
+    // the reference code will be displayed instead, which will make no sense to students.
     @Override
     public String toString() {
         return name;

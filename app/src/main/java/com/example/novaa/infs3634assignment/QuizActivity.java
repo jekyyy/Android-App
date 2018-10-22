@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -73,6 +74,8 @@ public class QuizActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score:" + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
+                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+
 
 
                 } else {
@@ -93,6 +96,8 @@ public class QuizActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score:" + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
+                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+
 
                 } else {
                     gameOver();
@@ -113,6 +118,8 @@ public class QuizActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score:" + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
+                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+
 
                 } else {
                     gameOver();
@@ -131,6 +138,8 @@ public class QuizActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
+                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+
 
                 } else {
                     gameOver();

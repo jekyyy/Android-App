@@ -19,5 +19,7 @@ public class TopicDatabase {
     public static ArrayList<Topics> getTopicsArrayList() {
         return topicsArrayList;
     }
-    
+
 }
+
+// This class is used to store the data for each separate topic.
