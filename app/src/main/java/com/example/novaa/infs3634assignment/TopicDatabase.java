@@ -29,5 +29,3 @@ public class TopicDatabase {
         return null;
     }
 }
-
-//TODO: ADD youtube paths to each topic please @Leslie.
