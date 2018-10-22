@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.beginQuiz);
         button.setOnClickListener(new View.OnClickListener() {
 
-            //https://www.youtube.com/watch?v=onJB8g504mw was used as a source on how to link the MainActivity to the QuizActivity
+            // When QuizButton is clicked, an Intent is created to start the QuizActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, QuizActivity.class);
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 
+            //When beginModule is clicked, an Intent is created to start the TopicList Activity
         beginModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
