@@ -1,12 +1,14 @@
 package com.example.novaa.infs3634assignment;
 
 import android.annotation.SuppressLint;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -22,6 +24,9 @@ public class TopicContent extends AppCompatActivity
     int topicId;
     String title;
     String youtubePath;
+
+    //For LOG
+    private static final String TAG = "TopicContent";
 
 
     @SuppressLint("StaticFieldLeak")
@@ -107,13 +112,20 @@ public class TopicContent extends AppCompatActivity
     }
 
     @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-        youTubePlayer.cueVideo(youtubePath);
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
+        Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
+
+        // This method checks to make sure the video was not restored already before starting buffer.
+        if(!wasRestored){
+            youTubePlayer.cueVideo(youtubePath);
+
+        }
 
     }
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
 
     }
 }
