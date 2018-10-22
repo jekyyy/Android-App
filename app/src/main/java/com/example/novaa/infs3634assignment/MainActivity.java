@@ -15,14 +15,12 @@ public class MainActivity extends AppCompatActivity {
     Button beginModule;
     TextView intro;
 
-
-//gygygyg
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.beginQuiz);
+        button = (Button) findViewById(R.id.startQuiz);
         button.setOnClickListener(new View.OnClickListener() {
 
             // When QuizButton is clicked, an Intent is created to start the QuizActivity

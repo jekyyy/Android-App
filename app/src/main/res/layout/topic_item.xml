@@ -1,9 +1,10 @@
-<TextView android:id="@+id/list_name"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_height="75dp"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_name"
     android:layout_width="match_parent"
-    android:textSize="24sp"
-    android:textAlignment="center"
-    android:textColor="#060606"
+    android:layout_height="75dp"
     android:layout_margin="10dp"
-    />
+    android:textAlignment="center"
+    android:textColor="#01579B"
+    android:textSize="24sp"
+    tools:text="#01579B" />
