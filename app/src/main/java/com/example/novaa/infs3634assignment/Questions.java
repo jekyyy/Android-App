@@ -15,6 +15,11 @@ public class Questions {
             "For the Cat and Animal classes, the correct way of inheritance in Java is:",
             "If I want to have common functions in a class and want to defer implementations of some other functions to derived classes, then we need to use:",
             "Java does not support which of the following?",
+            "Which statement is true regarding an object?",
+            "The wrapping up of data and functions into a single unit is called",
+            "Which one is true about a constructor?",
+            "What feature of OOP has a superclass/subclass concept?",
+            "What specifies the behaviour for objects of a class in Java?"
 
     };
 
@@ -31,11 +36,16 @@ public class Questions {
             {"The class Cat extends Animal", "The class Animal extends Cat", "Both are correct", "None are correct"},
             {"An Interface", "An abstract class", "A static class", "None"},
             {"Inheritance", "Multiple inheritance for classes", "Multiple inheritance of interfaces", "Compile time polymorphism"},
+            {"An object is what classes instantiated are from", "An object is an instance of a class", "An object is a variable", "An object is a reference to an attribute", "An object is not an instance of a class"},
+            {"Encapsulation", "Abstraction", "Data Hiding", "Polymorphism"},
+            {"A constructor has the same name as the class it is declared within", "A constructor may be declared private", "A constructor is used to create objects", "All of the above"},
+            {"Multilevel Inheritance", "Single Inheritance", "Multiple Inheritances", "Hierarchical Inheritance"},
+            {"Fields", "Methods", "Class", "Object"}
 
     };
     //In the Questions class, we have created a 'mCorrectAnswers' array to store all correct answers for each question.
 
-    private String mCorrectAnswers[] = {"Compilation", "At compile time", "Abstraction", "Encapsulation", "Hiding Complexity", "All of the above", "Abstraction", "The class Cat extends Animal", "An abstract class", "Multiple inheritance of interfaces"};
+    private String mCorrectAnswers[] = {"Compilation", "At compile time", "Abstraction", "Encapsulation", "Inheritance", "All of the above", "Abstraction", "The class Cat extends Animal", "An abstract class", "Multiple inheritance of interfaces", "An object is an instance of a class", "Encapsulation", "All of the above", "Hierarchical Inheritance", "Methods"};
 
     public String getQuestion(int a) {
         String question = mQuestions[a];
