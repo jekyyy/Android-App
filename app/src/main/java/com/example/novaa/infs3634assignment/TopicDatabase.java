@@ -19,13 +19,5 @@ public class TopicDatabase {
     public static ArrayList<Topics> getTopicsArrayList() {
         return topicsArrayList;
     }
-
-    public static Topics getTopicsById(int id) {
-        for (Topics t : topicsArrayList) {
-            if (t.getId() == id) {
-                return t;
-            }
-        }
-        return null;
-    }
+    
 }
