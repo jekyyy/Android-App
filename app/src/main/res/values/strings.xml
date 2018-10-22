@@ -1,18 +1,12 @@
 <resources>
     <string name="app_name">INFS1609: Object Oriented Programming</string>
-    <string name="title_activity_topic_list">TopicList</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_topic_list">Choose Your Module</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_navigation_bar">NavigationBar</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
     <string name="title_activity_topic_content">TopicContent</string>
-    <string name="large_text">
+    <string name="title_activity_scrolling">Topic Content</string>
+    <string name="title_quiz">Test Your Knowledge!</string>
 
-   ]</string>
+
     <string name="Abstraction">
         "Abstraction is the process of taking away or removing characteristics from something in order to reduce it to a set of essential characteristics. In object-oriented programming, abstraction is one of three central principles (along with encapsulation and inheritance). Through the process of abstraction, a programmer hides all but the relevant data about an object in order to reduce complexity and increase efficiency. In the same way that abstraction sometimes works in art, the object that remains is a representation of the original, with unwanted detail omitted. The resulting object itself can be referred to as an abstraction, meaning a named entity made up of selected attributes and behaviour specific to a particular usage of the originating entity. Abstraction is related to both encapsulation and data hiding.
 
@@ -105,4 +99,6 @@ Behaviours
 Every object has behaviours. That is, an object has a certain set of actions that it can perform. The behaviour of an object is defined by the set of methods which can be applied on it. The behaviour of an object (also known as its actions) is defined by methods. To invoke a method on an object is to ask the object to perform an action. For example, you may define methods named getArea() and getPerimeter() for circle objects. A circle object may invoke getArea() to return its area and getPerimeter() to return its perimeter. You may also define the setRadius(radius) method. A circle object can invoke this method to change its radius. Different classes may have some com- mon properties and behaviors, which can be generalized in a class that can be shared by other classes. You can define a specialized class that extends the generalized class. The specialized classes inherit the properties and methods from the general class."
 
     </string>
+
+
 </resources>

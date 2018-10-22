@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient1"
     tools:context=".TopicList">
 
-    <ListView
+
+    <android.widget.ListView
+        android:layout_marginTop="20dp"
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20px"
-        android:background="@drawable/gradient2"
-        android:typeface="sans"/>
+        android:typeface="sans" />
 
 </android.support.constraint.ConstraintLayout>

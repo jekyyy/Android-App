@@ -1,36 +1,53 @@
 package com.example.novaa.infs3634assignment;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 
-public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class TopicContent extends AppCompatActivity
+        implements YouTubePlayer.OnInitializedListener {
 
-    TextView titleView;
     TextView contentView;
     String content;
     int topicId;
     String title;
     String youtubePath;
-    YouTubePlayerView youtubeView;
+
 
     @SuppressLint("StaticFieldLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic_content_test);
+        setContentView(R.layout.activity_topic_content);
 
-        titleView = (TextView) findViewById(R.id.titleText);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        */
+
+        YouTubePlayerSupportFragment frag =
+                (YouTubePlayerSupportFragment) getSupportFragmentManager().findFragmentById(R.id.youtubeFragment);
+        frag.initialize(YoutubeConfig.API_KEY, this);
+
         contentView = (TextView) findViewById(R.id.contentText);
 
 
@@ -40,8 +57,15 @@ public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlay
         title = extras.getString("topicTitle");
         youtubePath = extras.getString("topicVideo");
 
+        //We realized that the title did not fit as it was too long. To counteract this, we utilised this 'if' statement.
+        if (topicId == 1) {
+            setTitle("OOP");
+        } else {
+            setTitle(title);
+        }
 
         //This is how the figures out which content to display, depending on what was clicked.
+        //The method is run in the background using ASyncTask to avoid overloading the main interface.
         new AsyncTask<String, Void, String>() {
             @Override
             protected String doInBackground(String... strings) {
@@ -74,15 +98,10 @@ public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlay
 
             protected void onPostExecute(String content) {
 
-                titleView.setText(title);
                 contentView.setText(content);
 
             }
         }.execute();
-
-
-        youtubeView = findViewById(R.id.youtubePlayer);
-        youtubeView.initialize(YoutubeConfig.API_KEY, this);
 
 
     }
@@ -90,13 +109,11 @@ public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlay
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
         youTubePlayer.cueVideo(youtubePath);
+        
     }
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
 
     }
-
 }
-
-//TODO: Throw some more meat into onInitializationSuccess and Failure (log.d, toast messages etc)
