@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.beginQuiz);
         button.setOnClickListener(new View.OnClickListener() {
 
             //https://www.youtube.com/watch?v=onJB8g504mw was used as a source on how to link the MainActivity to the QuizActivity
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        beginModule = findViewById(R.id.beginModule2);
+        beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 
         beginModule.setOnClickListener(new View.OnClickListener() {

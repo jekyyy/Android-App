@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,7 +33,7 @@ public class TopicList extends AppCompatActivity {
                 System.out.println(adapterView.getItemAtPosition(i));
 
 
-                Intent intent = new Intent(TopicList.this, TopicContentTEST.class);
+                Intent intent = new Intent(TopicList.this, ScrollingActivity.class);
                 Bundle extras = new Bundle();
                 extras.putInt("topicId", clicked.getId());
                 extras.putString("topicTitle", clicked.getName());

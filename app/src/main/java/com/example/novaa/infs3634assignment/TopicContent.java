@@ -3,9 +3,7 @@ package com.example.novaa.infs3634assignment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -14,7 +12,8 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 
-public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+
+public class TopicContent extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     TextView titleView;
     TextView contentView;
@@ -28,7 +27,7 @@ public class TopicContentTEST extends YouTubeBaseActivity implements YouTubePlay
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic_content_test);
+        setContentView(R.layout.activity_topic_content);
 
         titleView = (TextView) findViewById(R.id.titleText);
         contentView = (TextView) findViewById(R.id.contentText);
