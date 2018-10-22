@@ -109,7 +109,7 @@ public class TopicContent extends AppCompatActivity
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
         youTubePlayer.cueVideo(youtubePath);
-        
+
     }
 
     @Override
