@@ -5,12 +5,6 @@ public class Topics {
     private String name;
     private String youtubePath;
 
-    public Topics(int id, String name) {
-        this.setId(id);
-        this.setName(name);
-    }
-
-
     public Topics(int id, String name, String youtubePath) {
         this.setId(id);
         this.setName(name);
