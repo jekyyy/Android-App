@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.novaa.infs3634assignment">
-    //Added Internet permission in order for Glide to work
+
+    <!-- Enable the app to access the internet by granting it permission to access the network -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -24,14 +25,13 @@
         </activity>
         <activity
             android:name=".TopicList"
-            android:label="@string/title_activity_topic_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_topic_list" />
+
+        <activity android:name=".QuizActivity"
+            android:label="@string/title_quiz"/>
+
         <activity
             android:name=".TopicContent"
-            android:label="Lesson" />
-        <activity android:name=".QuizActivity" />
-        <activity
-            android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

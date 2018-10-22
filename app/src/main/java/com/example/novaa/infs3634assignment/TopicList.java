@@ -17,7 +17,7 @@ public class TopicList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic_list2);
+        setContentView(R.layout.activity_topic_list);
 
         listView = findViewById(R.id.listview);
         topics = TopicDatabase.getTopicsArrayList();
@@ -33,7 +33,7 @@ public class TopicList extends AppCompatActivity {
                 System.out.println(adapterView.getItemAtPosition(i));
 
 
-                Intent intent = new Intent(TopicList.this, ScrollingActivity.class);
+                Intent intent = new Intent(TopicList.this, TopicContent.class);
                 Bundle extras = new Bundle();
                 extras.putInt("topicId", clicked.getId());
                 extras.putString("topicTitle", clicked.getName());
