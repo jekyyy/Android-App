@@ -9,9 +9,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //created button for 'Start Quiz' which takes user to QuizActivity (Multiple Choice Quiz)
+    //created button for 'Start Quiz' which takes user to QuizActivity (Multiple Choice Quiz).
     private Button button;
 
+    //TextView is created for intro.
     Button beginModule;
     TextView intro;
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //referencing and linking startQuiz button.
+        //when user clicks on the startQuiz button, open and start QuizActivity activity.
         button = (Button) findViewById(R.id.startQuiz);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //referencing beginModule to its button.
+        //when user clicks on beginModule button, open and start TopicList activity.
         beginModule = findViewById(R.id.beginModule);
         intro = findViewById(R.id.intro);
 
