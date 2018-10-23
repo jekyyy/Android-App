@@ -3,12 +3,15 @@ package com.example.novaa.infs3634assignment;
 import android.annotation.SuppressLint;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -24,6 +27,7 @@ public class TopicContent extends AppCompatActivity
     int topicId;
     String title;
     String youtubePath;
+    String tip;
 
     //For LOG
     private static final String TAG = "TopicContent";
@@ -35,21 +39,10 @@ public class TopicContent extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_content);
 
-        //Links the toolbar utilised in the xml. Note that this was one of the default activites we
+        //Links the toolbar utilised in the xml. Note that this was one of the default activities we
         //can choose to create.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //TODO: Make it so that if clicked, itll show a quick tip on how to remember the topic.
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
 
         /*
         Originally we tried using YouTubePlayerView to display the video. However as we needed to
@@ -77,35 +70,43 @@ public class TopicContent extends AppCompatActivity
             setTitle(title);
         }
 
+
         //This is how the figures out which content to display, depending on what was clicked.
         //The method is run in the background using ASyncTask to avoid overloading the main interface.
         new AsyncTask<String, Void, String>() {
             @Override
             protected String doInBackground(String... strings) {
 
-                //The bulk of the content were stored in strings resource file as storing them in the
-                //Topic Database would be too chunky.
+                //The bulk of the content were stored in strings in content.xml and tips.xml
+                //as storing them in the Topic Database would be too chunky.
                 switch (topicId) {
                     case 1:
                         content = getResources().getString(R.string.OOP);
+                        tip = getResources().getString(R.string.OOPtip);
                         break;
                     case 2:
                         content = getResources().getString(R.string.Attributes);
+                        tip = getResources().getString(R.string.AttributesTip);
                         break;
                     case 3:
                         content = getResources().getString(R.string.Methods);
+                        tip = getResources().getString(R.string.MethodTip);
                         break;
                     case 4:
                         content = getResources().getString(R.string.Abstraction);
+                        tip = getResources().getString(R.string.AbstractionTip);
                         break;
                     case 5:
                         content = getResources().getString(R.string.Polymorphism);
+                        tip = getResources().getString(R.string.PolymorphismTip);
                         break;
                     case 6:
                         content = getResources().getString(R.string.Inheritance);
+                        tip = getResources().getString(R.string.InheritanceTip);
                         break;
                     case 7:
                         content = getResources().getString(R.string.Encapsulation);
+                        tip = getResources().getString(R.string.EncapsulationTip);
                         break;
                 }
                 return content;
@@ -119,7 +120,19 @@ public class TopicContent extends AppCompatActivity
         }.execute();
 
 
+        //This is the method for the "quick tip" button.
+        FloatingActionButton tips = (FloatingActionButton) findViewById(R.id.tips);
+        tips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view,tip, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
     }
+
+
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="OOPtip">
+        "Think of classes as a recipe for a cake!"
+    </string>
+
+    <string name="AttributesTip">
+        "Think of attributes as someone's feature! Some people have black hair, some red..!"
+    </string>
+
+    <string name="MethodTip">
+        "Methods are the actions the object can perform!"
+    </string>
+
+    <string name="AbstractionTip">
+        "Abstraction is representing something complex more simple!
+    </string>
+    <string name="PolymorphismTip">
+        "Polymorphism allows for different variations of the same cake, depending on who bakes it!"
+    </string>
+    <string name="InheritanceTip">
+        "Eg. A child will inherit some features and traits from his/her parents.. same thing!"
+    </string>
+
+    <string name="EncapsulationTip">
+        "Example of encapsulation is our car. We turn the keys and expect it to run, without knowing how the enginge works."
+    </string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>
