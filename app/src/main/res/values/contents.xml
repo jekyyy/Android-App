@@ -54,7 +54,7 @@ Provide a getter method only if you want the data field to be readable, and prov
 ."
     </string>
     <string name="OOP">
-        Defining Classes for Objects
+        "Defining Classes for Objects
 In Object-oriented programming (OOP), we use objects. An object represents an entity in the real world that can be distinctly identified. An object can be a lecturer, a door, a cup, a pen. Every object has a unique state, identity and behaviour. Objects of the same type are defined using a common class. A class is a blueprint that defines what an object’s data fields and methods will be. An object is an instance of a class.
 
 A Java class uses variables to define data fields and methods to define actions. A class provides methods of a special type, known as constructors, which are invoked to create a new object. A constructor can perform any action, and they are used to perform initialising actions, such as initialising the data fields of objects.
@@ -69,7 +69,7 @@ Static Variables, Constants, and Methods
 The data field radius in the circle class is known as an instance variable. An instance variable is tied to a specific instance of the class; it is not shared among objects of the same class. If you want all the instances of a class to share data, use static variables. They store values for the variables in a common memory location. If one object changes the value of a static variable, all objects of the same class are affected.
 
 Visibility Modifiers
-The public visibility modifier for classes, methods, and data fields are used to denote that they can be accessed from any other classes. If no visibility modifier is used, then by default the classes, methods, and data fields are accessible by any class in the same package. We also have the private and protected modifiers for class members. The private modifier makes methods and data fields accessible only from within its own class. The protected modifier is used to enable the members of the class to be accessed by the subclasses in any package or classes in the same package.
+The public visibility modifier for classes, methods, and data fields are used to denote that they can be accessed from any other classes. If no visibility modifier is used, then by default the classes, methods, and data fields are accessible by any class in the same package. We also have the private and protected modifiers for class members. The private modifier makes methods and data fields accessible only from within its own class. The protected modifier is used to enable the members of the class to be accessed by the subclasses in any package or classes in the same package."
 
     </string>
     <string name="Attributes">
