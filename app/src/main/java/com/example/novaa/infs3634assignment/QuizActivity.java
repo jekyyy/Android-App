@@ -50,10 +50,7 @@ public class QuizActivity extends AppCompatActivity {
         answer3 = (Button) findViewById(R.id.answer3);
         answer4 = (Button) findViewById(R.id.answer4);
 
-        //reference score TextView to the score id
         score = (TextView) findViewById(R.id.score);
-
-        //reference question TextView to the question id
         question = (TextView) findViewById(R.id.question);
 
         //create score by using mScore variable to display score count at the top of the App page.
