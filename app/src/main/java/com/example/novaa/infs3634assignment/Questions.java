@@ -9,7 +9,7 @@ public class Questions {
             "At what stage is overloading determined?",
             "Which concept of Java is a way of converting real world objects in terms of class?",
             "Which concept of Java is achieved by combining methods and attributes into a class?",
-            "The encapsulation concept in Java is:",
+            "The Encapsulation concept in Java is:",
             "The following concept can be used for encapsulation in Java programs is called:",
             "Exposing only necessary information to clients (main programs, classes) is known as: ",
             "For the Cat and Animal classes, the correct way of inheritance in Java is:",
@@ -30,7 +30,7 @@ public class Questions {
             {"At run time", "At compile time", "At coding time", "At execution time"},
             {"Polymorphism", "Encapsulation", "Abstraction", "Inheritance"},
             {"Encapsulation", "Inheritance", "Polymorphism", "Abstraction"},
-            {"Hiding complexity", "Method Hiding", "Hiding Constructor", "None"},
+            {"Hiding Complexity", "Method Hiding", "Hiding Constructor", "None"},
             {"Wrapping data fields with methods", "Hiding data and internal methods using access modifiers in a class", "Using Interfaces", "All of the above"},
             {"Abstraction", "Encapsulation", "Data Hiding", "Hiding Complexity"},
             {"The class Cat extends Animal", "The class Animal extends Cat", "Both are correct", "None are correct"},
@@ -45,7 +45,7 @@ public class Questions {
     };
     //In the Questions class, we have created a 'mCorrectAnswers' array to store all correct answers for each question.
 
-    private String mCorrectAnswers[] = {"Compilation", "At compile time", "Abstraction", "Encapsulation", "Inheritance", "All of the above", "Abstraction", "The class Cat extends Animal", "An abstract class", "Multiple inheritance of interfaces", "An object is an instance of a class", "Encapsulation", "All of the above", "Hierarchical Inheritance", "Methods"};
+    private String mCorrectAnswers[] = {"Compilation", "At compile time", "Abstraction", "Encapsulation", "Hiding Complexity", "All of the above", "Abstraction", "The class Cat extends Animal", "An abstract class", "Multiple inheritance of interfaces", "An object is an instance of a class", "Encapsulation", "All of the above", "Hierarchical Inheritance", "Methods"};
 
     public String getQuestion(int a) {
         String question = mQuestions[a];
