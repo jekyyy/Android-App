@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             // When QuizButton is clicked, an Intent is created to start the QuizActivity
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, QuizFragment.class);
+                Intent intent = new Intent(MainActivity.this, QuizActivity.class);
                 startActivity(intent);
 
             }
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         beginModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, navTEST.class);
+                Intent intent = new Intent(MainActivity.this, TopicList.class);
 
                 startActivity(intent);
             }
