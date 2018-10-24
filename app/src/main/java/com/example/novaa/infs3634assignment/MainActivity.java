@@ -1,6 +1,7 @@
 package com.example.novaa.infs3634assignment;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    //TODO: Potentially delete quiz button.
 
     //created button for 'Start Quiz' which takes user to QuizActivity (Multiple Choice Quiz).
     private Button button;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             // When QuizButton is clicked, an Intent is created to start the QuizActivity
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+                Intent intent = new Intent(MainActivity.this, QuizFragment.class);
                 startActivity(intent);
 
             }
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         beginModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TopicList.class);
+                Intent intent = new Intent(MainActivity.this, navTEST.class);
 
                 startActivity(intent);
             }
@@ -52,3 +55,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+

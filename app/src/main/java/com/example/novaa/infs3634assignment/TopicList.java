@@ -1,6 +1,7 @@
 package com.example.novaa.infs3634assignment;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class TopicList extends AppCompatActivity {
+public class TopicList extends FragmentActivity {
     ArrayList<Topics> topics;
     ListView listView;
 

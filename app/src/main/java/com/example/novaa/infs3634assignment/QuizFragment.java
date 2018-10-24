@@ -1,21 +1,25 @@
 package com.example.novaa.infs3634assignment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
-//https://www.youtube.com/watch?v=4g1_UH_6VQc - used as a guideline for part of the QuizActivity logic.
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizFragment extends Fragment {
 
     //Created buttons for the 4 multiple choice options.
     Button answer1, answer2, answer3, answer4;
@@ -36,22 +40,32 @@ public class QuizActivity extends AppCompatActivity {
     //declared the Random variable 'r' so that we can use this variable to generate a random selection of questions.
     Random r;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
 
+    public QuizFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_quiz, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         //generate a random question.
         r = new Random();
 
         //reference answer1 button to answer1 array, answer2 for answer2 array, etc.
-        answer1 = (Button) findViewById(R.id.answer1);
-        answer2 = (Button) findViewById(R.id.answer2);
-        answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.answer4);
+        answer1 = (Button) view.findViewById(R.id.answer1);
+        answer2 = (Button) view.findViewById(R.id.answer2);
+        answer3 = (Button) view.findViewById(R.id.answer3);
+        answer4 = (Button) view.findViewById(R.id.answer4);
 
-        score = (TextView) findViewById(R.id.score);
-        question = (TextView) findViewById(R.id.question);
+        score = (TextView) view.findViewById(R.id.score);
+        question = (TextView) view.findViewById(R.id.question);
 
         //create score by using mScore variable to display score count at the top of the App page.
         score.setText("Score: " + mScore);
@@ -59,21 +73,17 @@ public class QuizActivity extends AppCompatActivity {
         //generate next question randomly using this method.
         updateQuestion(r.nextInt(mQuestionLength));
 
-        // https://developer.android.com/guide/topics/ui/notifiers/toasts - used as a reference for the code below.
-
-
         //creates an action for when the user selects answer1 button.
         //If the user clicks on the first answer and it is correct, it will display "Correct!" and move on to the next question.
         //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(answer1.getText() == mAnswer) {
+                if (answer1.getText() == mAnswer) {
                     mScore++;
                     score.setText("Score:" + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -90,17 +100,16 @@ public class QuizActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(answer2.getText() == mAnswer) {
+                if (answer2.getText() == mAnswer) {
                     mScore++;
                     score.setText("Score:" + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
 
                 } else {
                     gameOver();
                 }
-
 
 
             }
@@ -112,11 +121,11 @@ public class QuizActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(answer3.getText() == mAnswer) {
+                if (answer3.getText() == mAnswer) {
                     mScore++;
                     score.setText("Score:" + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -132,11 +141,11 @@ public class QuizActivity extends AppCompatActivity {
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(answer4.getText() == mAnswer) {
+                if (answer4.getText() == mAnswer) {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(QuizActivity.this, "Correct Answer!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -146,12 +155,14 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-
     }
+
+
+
 
     //created a private void method named 'updateQuestion'.
     //this will generate the number of questions asked, that is the number of questions correctly asked by the user.
-    private void updateQuestion(int num) {
+    private void updateQuestion ( int num){
         question.setText(mQuestions.getQuestion(num));
         answer1.setText(mQuestions.getChoice1(num));
         answer2.setText(mQuestions.getChoice2(num));
@@ -159,7 +170,6 @@ public class QuizActivity extends AppCompatActivity {
         answer4.setText(mQuestions.getChoice4(num));
 
         mAnswer = mQuestions.getCorrectAnswer((num));
-
 
 
     }
@@ -170,8 +180,9 @@ public class QuizActivity extends AppCompatActivity {
     //.setMessage: set the message to display using the given resource id.
     //.setCancelable removes 'CANCEL' button in the AlertDialog.
     //.setPositiveButton allows the user to start QuizActivity activity by pressing on "NEW GAME".
+
     private void gameOver() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(QuizActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         alertDialogBuilder
                 .setMessage("Game Over! Your score is " + mScore + " points.")
                 .setCancelable(false)
@@ -179,8 +190,8 @@ public class QuizActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(getApplicationContext(),QuizActivity.class));
-                                finish();
+                                startActivity(new Intent(getContext(), QuizFragment.class));
+                                getActivity().finish();
 
                             }
                         })
@@ -190,7 +201,7 @@ public class QuizActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                finish();
+                                getActivity().finish();
 
                             }
                         });
@@ -200,3 +211,4 @@ public class QuizActivity extends AppCompatActivity {
         alertDialog.show();
     }
 }
+
