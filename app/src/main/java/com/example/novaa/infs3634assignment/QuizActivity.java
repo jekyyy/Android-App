@@ -44,6 +44,7 @@ public class QuizActivity extends AppCompatActivity {
         //generate a random question.
         r = new Random();
 
+
         //reference answer1 button to answer1 array, answer2 for answer2 array, etc.
         answer1 = (Button) findViewById(R.id.answer1);
         answer2 = (Button) findViewById(R.id.answer2);
@@ -145,6 +146,8 @@ public class QuizActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
     }
