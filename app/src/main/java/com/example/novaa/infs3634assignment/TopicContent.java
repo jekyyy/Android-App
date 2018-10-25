@@ -142,6 +142,32 @@ public class TopicContent extends AppCompatActivity
         // This method checks to make sure the video was not restored already before starting buffer.
         if(!wasRestored){
             youTubePlayer.cueVideo(youtubePath);
+            youTubePlayer.setPlaybackEventListener(new YouTubePlayer.PlaybackEventListener() {
+                @Override
+                public void onPlaying() {
+
+                }
+
+                @Override
+                public void onPaused() {
+
+                }
+
+                @Override
+                public void onStopped() {
+
+                }
+
+                @Override
+                public void onBuffering(boolean b) {
+
+                }
+
+                @Override
+                public void onSeekTo(int i) {
+
+                }
+            });
 
         }
 
@@ -149,6 +175,7 @@ public class TopicContent extends AppCompatActivity
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+        Log.e("Youtube", "Failed to initialize error.");
 
 
     }

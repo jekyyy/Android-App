@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:label="Choose A Topic"
     tools:context=".TopicListFragment">
 
     <android.widget.ListView
         android:layout_marginTop="20dp"
-        android:id="@id/listview"
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:typeface="sans" />

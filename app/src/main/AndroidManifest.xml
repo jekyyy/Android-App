@@ -24,17 +24,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TopicList"
-            android:label="@string/title_activity_topic_list" />
-        <activity
-            android:name=".QuizActivity"
-            android:label="@string/title_quiz" />
-        <activity
             android:name=".TopicContent"
             android:label="@string/title_activity_scrolling"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".navTEST"
+            android:name=".NavigationBar"
             android:label="@string/title_activity_nav_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

@@ -1,7 +1,6 @@
 package com.example.novaa.infs3634assignment;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             // When QuizButton is clicked, an Intent is created to start the QuizActivity
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, navTEST.class);
+                Intent intent = new Intent(MainActivity.this, NavigationBar.class);
                 intent.putExtra("button", 2);
                 startActivity(intent);
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, navTEST.class);
+                Intent intent = new Intent(MainActivity.this, NavigationBar.class);
                 intent.putExtra("button", 1);
                 startActivity(intent);
 

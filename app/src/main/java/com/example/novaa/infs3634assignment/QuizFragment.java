@@ -1,16 +1,14 @@
 package com.example.novaa.infs3634assignment;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
+import android.util.EventLog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +16,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.EventListener;
 import java.util.Random;
 
 
-public class   QuizFragment extends Fragment {
+public class   QuizFragment extends Fragment implements EventListener {
 
     //Created buttons for the 4 multiple choice options.
     Button answer1, answer2, answer3, answer4;
@@ -74,6 +73,9 @@ public class   QuizFragment extends Fragment {
 
         //generate next question randomly using this method.
         updateQuestion(r.nextInt(mQuestionLength));
+
+
+
 
         //creates an action for when the user selects answer1 button.
         //If the user clicks on the first answer and it is correct, it will display "Correct!" and move on to the next question.
@@ -192,7 +194,7 @@ public class   QuizFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent = new Intent(getContext(), navTEST.class);
+                                Intent intent = new Intent(getContext(), NavigationBar.class);
                                 intent.putExtra("button", 2);
                                 startActivity(intent);
                                 getActivity().finish();

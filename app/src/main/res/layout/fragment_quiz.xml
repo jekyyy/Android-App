@@ -8,7 +8,8 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".QuizActivity"
+    tools:context=".QuizFragment"
+    android:label="Test Your Knowledge!"
     android:background="@drawable/gradient1">
 
 
@@ -82,7 +83,7 @@
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="151dp"
-        android:layout_below="@+id/score"
+        android:layout_below="@id/score"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="TextView"
