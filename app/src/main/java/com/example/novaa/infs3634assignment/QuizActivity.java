@@ -19,7 +19,7 @@ public class QuizActivity extends AppCompatActivity {
 
     //Created buttons for the 4 multiple choice options.
     Button answer1, answer2, answer3, answer4;
-
+    
     //created TextView to display score count and question.
     TextView score, question;
 

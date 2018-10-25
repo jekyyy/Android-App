@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
         <string name="Abstraction">
+
             "What is Abstraction?
 
 Abstraction is the process of taking away or removing characteristics from something in order to reduce it to a set of essential characteristics. In object-oriented programming, abstraction is one of three central principles (along with encapsulation and inheritance). Through the process of abstraction, a programmer hides all but the relevant data about an object in order to reduce complexity and increase efficiency. In the same way that abstraction sometimes works in art, the object that remains is a representation of the original, with unwanted detail omitted. The resulting object itself can be referred to as an abstraction, meaning a named entity made up of selected attributes and behaviour specific to a particular usage of the originating entity. Abstraction is related to both encapsulation and data hiding.
@@ -12,7 +13,9 @@ Why is it important?
 
 Abstraction is one of the most important principles in object-oriented software engineering and is closely related to several other important concepts, including encapsulation, inheritance and polymorphism.
 Abstraction is applied in the process of identifying software artifacts (objects) to model the problem domain. It is the process of reducing these objects to their essence such that only the necessary elements are represented. Abstraction defines an object in terms of its properties, functionality, and interface (means of communicating with other objects).
-These methods are used to reduce the complexity of the design and implementation process of software. In that process, the designers define abstract object actors that are able to perform work, change their state and communicate with other actors. The state of the object is encapsulated while the detailed data structures associated with the object are kept behind the scenes."
+These methods are used to reduce the complexity of the design and implementation process of software. In that process, the designers define abstract object actors that are able to perform work, change their state and communicate with other actors. The state of the object is encapsulated while the detailed data structures associated with the object are kept behind the scenes.
+
+* Material from "Introduction to Java Programming" by Daniel Liang"
 
 
     </string>
@@ -27,7 +30,9 @@ The inheritance relationship enables a subclass to inherit features from its sup
 
 As an example, assume there is a base class named Animals from which the subclasses Horse, Fish and Bird are derived. Also assume that the Animals class has a function named Move, which is inherited by all subclasses mentioned. With polymorphism, each subclass may have its own way of implementing the function. So, for example, when the Move function is called in an object of the Horse class, the function might respond by displaying trotting on the screen. On the other hand, when the same function is called in an object of the Fish class, swimming might be displayed on the screen. In the case of a Bird object, it may be flying.
 
-In effect, polymorphism cuts down the work of the developer because he can now create a general class with all the attributes and behaviours that he envisions for it. When the time comes for the developer to create more specific subclasses with certain unique attributes and behaviors, the developer can simply alter code in the specific portions where the behaviours differ. All other portions of the code can be left as is."
+In effect, polymorphism cuts down the work of the developer because he can now create a general class with all the attributes and behaviours that he envisions for it. When the time comes for the developer to create more specific subclasses with certain unique attributes and behaviors, the developer can simply alter code in the specific portions where the behaviours differ. All other portions of the code can be left as is.
+
+* Material from "Introduction to Java Programming" by Daniel Liang"
 
 
 
@@ -43,7 +48,9 @@ Private data fields in a superclass are not accessible outside the class. Theref
 
 Inheritance is used to model the is-a relationship. Do not blindly extend a class just for the sake of reusing methods. For example, it makes no sense for a Tree class to extend a Person class, even though they share common properties such as height and weight. A subclass and its superclass must have the is-a relationship.
 
-Some programming languages allow you to derive a subclass from several classes. This capability is known as multiple inheritance. Java, however, does not allow multiple inheritance. A Java class may inherit directly from only one superclass. This restriction is known as single inheritance. If you use the extends keyword to define a subclass, it allows only one parent class."
+Some programming languages allow you to derive a subclass from several classes. This capability is known as multiple inheritance. Java, however, does not allow multiple inheritance. A Java class may inherit directly from only one superclass. This restriction is known as single inheritance. If you use the extends keyword to define a subclass, it allows only one parent class.
+
+* Material from "Introduction to Java Programming" by Daniel Liang"
 
     </string>
     <string name="Encapsulation">
@@ -56,9 +63,13 @@ In OOP, objects are the first things a programmer considers when designing a pro
 Java offers four different "scope" realms--public, protected, private, and package--that can be used to selectively hide data constructs. To achieve encapsulation, the programmer declares the class variables as “private” and then provides what are called public “setter and getter” methods which make it possible to view and modify the variables. A Java object publishes its interfaces, which consist of public methods and instantiated data, enabling other objects to interact with it without the object’s inner workings being revealed. Data hiding ensures that someone maintaining the code can’t inadvertently point to or access the wrong data. Programmers creating objects to interact with existing objects need not know how the encapsulated code works specifically, just how to use its interface.
 
 A class should use the private modifier to hide its data from direct access by clients. This makes the class easy to maintain.
-Provide a getter method only if you want the data field to be readable, and provide a setter method only if you want the data field to be updateable. For example, the Rational class provides a getter method for numerator and denominator, but no setter method, because a Rational object is immutable."
+Provide a getter method only if you want the data field to be readable, and provide a setter method only if you want the data field to be updateable. For example, the Rational class provides a getter method for numerator and denominator, but no setter method, because a Rational object is immutable.
+
+ * Material from "Introduction to Java Programming" by Daniel Liang"
+
     </string>
     <string name="OOP">
+
         "Definition
 
 In Object-oriented programming (OOP), we use objects. An object represents an entity in the real world that can be distinctly identified. An object can be a lecturer, a door, a cup, a pen. Every object has a unique state, identity and behaviour. Objects of the same type are defined using a common class. A class is a blueprint that defines what an object’s data fields and methods will be. An object is an instance of a class.
@@ -82,7 +93,9 @@ The data field radius in the circle class is known as an instance variable. An i
 
 Visibility Modifiers
 
-The public visibility modifier for classes, methods, and data fields are used to denote that they can be accessed from any other classes. If no visibility modifier is used, then by default the classes, methods, and data fields are accessible by any class in the same package. We also have the private and protected modifiers for class members. The private modifier makes methods and data fields accessible only from within its own class. The protected modifier is used to enable the members of the class to be accessed by the subclasses in any package or classes in the same package."
+The public visibility modifier for classes, methods, and data fields are used to denote that they can be accessed from any other classes. If no visibility modifier is used, then by default the classes, methods, and data fields are accessible by any class in the same package. We also have the private and protected modifiers for class members. The private modifier makes methods and data fields accessible only from within its own class. The protected modifier is used to enable the members of the class to be accessed by the subclasses in any package or classes in the same package.
+
+* Material from "Introduction to Java Programming" by Daniel Liang"
 
     </string>
     <string name="Attributes">
@@ -98,7 +111,9 @@ Examples of attributes for a person would be name, age, height, eye colour and h
 
 Instance Variables
 
-Instance variables may be initially set when an object is created and stay constant throughout the life of the object, or they may be able to change at will as the program runs. Change the value of the variable, and you change an object's attributes. In addition to instance variables, there are also class variables, which apply to the class itself and to all its instances. Unlike instance variables, whose values are stored in the instance, class variables' values are stored in the class itself."
+Instance variables may be initially set when an object is created and stay constant throughout the life of the object, or they may be able to change at will as the program runs. Change the value of the variable, and you change an object's attributes. In addition to instance variables, there are also class variables, which apply to the class itself and to all its instances. Unlike instance variables, whose values are stored in the instance, class variables' values are stored in the class itself.
+
+* Material from "Introduction to Java Programming" by Daniel Liang"
 
 
     </string>
@@ -113,6 +128,6 @@ Behaviours
 
 Every object has behaviours. That is, an object has a certain set of actions that it can perform. The behaviour of an object is defined by the set of methods which can be applied on it. The behaviour of an object (also known as its actions) is defined by methods. To invoke a method on an object is to ask the object to perform an action. For example, you may define methods named getArea() and getPerimeter() for circle objects. A circle object may invoke getArea() to return its area and getPerimeter() to return its perimeter. You may also define the setRadius(radius) method. A circle object can invoke this method to change its radius. Different classes may have some com- mon properties and behaviors, which can be generalized in a class that can be shared by other classes. You can define a specialized class that extends the generalized class. The specialized classes inherit the properties and methods from the general class.
 
-
+* Material from "Introduction to Java Programming" by Daniel Liang"
     </string>
 </resources>

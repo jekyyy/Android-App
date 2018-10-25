@@ -81,7 +81,7 @@ public class QuizFragment extends Fragment {
             public void onClick(View view) {
                 if (answer1.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score:" + mScore);
+                    score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
                     Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
@@ -102,7 +102,7 @@ public class QuizFragment extends Fragment {
             public void onClick(View view) {
                 if (answer2.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score:" + mScore);
+                    score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
                     Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
@@ -123,7 +123,7 @@ public class QuizFragment extends Fragment {
             public void onClick(View view) {
                 if (answer3.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score:" + mScore);
+                    score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionLength));
                     Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 
