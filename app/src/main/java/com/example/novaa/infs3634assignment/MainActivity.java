@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TODO: Potentially delete quiz button.
-
     //created button for 'Start Quiz' which takes user to QuizActivity (Multiple Choice Quiz).
     private Button button;
 
@@ -23,33 +21,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        intro = findViewById(R.id.intro);
 
-        //Referencing and linking startQuiz button.
-        //When user clicks on the startQuiz button, open and start QuizActivity activity.
+        //When user clicks on one of the button and intent is created to open the Nav Bar activity.
+        //A number is passed to differentiate which button is clicked so that the NavBar can
+        //Inflate the correct fragment.
         button = (Button) findViewById(R.id.startQuiz);
         button.setOnClickListener(new View.OnClickListener() {
 
             // When QuizButton is clicked, an Intent is created to start the QuizActivity
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+                Intent intent = new Intent(MainActivity.this, navTEST.class);
+                intent.putExtra("button", 2);
                 startActivity(intent);
 
             }
         });
 
-        //Referencing beginModule to its button.
-        //When user clicks on beginModule button, open and start TopicList activity.
         beginModule = findViewById(R.id.beginModule);
-        intro = findViewById(R.id.intro);
 
             //When beginModule is clicked, an Intent is created to start the TopicList Activity
         beginModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TopicList.class);
 
+                Intent intent = new Intent(MainActivity.this, navTEST.class);
+                intent.putExtra("button", 1);
                 startActivity(intent);
+
             }
 
         });
