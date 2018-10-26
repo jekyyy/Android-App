@@ -10,6 +10,7 @@
     android:paddingTop="16dp"
     tools:context=".QuizFragment"
     android:label="Test Your Knowledge!"
+    android:id="@+id/quizview"
     android:background="@drawable/gradient1">
 
 

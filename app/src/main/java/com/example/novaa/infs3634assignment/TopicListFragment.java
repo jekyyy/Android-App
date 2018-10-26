@@ -1,8 +1,6 @@
 package com.example.novaa.infs3634assignment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,7 +14,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-
+//Completed by Jacky
 public class TopicListFragment extends Fragment {
     ArrayList<Topics> topics;
     ListView listView;
@@ -31,6 +29,7 @@ public class TopicListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_topic_list, container, false);
     }
 
+    /*What happens after the view is created. */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

@@ -14,12 +14,13 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
-
+//Completed by Jacky, Strings inserted by Leslie
 public class TopicContent extends AppCompatActivity
         implements YouTubePlayer.OnInitializedListener {
 
@@ -65,7 +66,7 @@ public class TopicContent extends AppCompatActivity
         //We realized that the title did not fit as it was too long. To counteract this, we utilised this 'if' statement.
         if (topicId == 1) {
             setTitle("OOP");
-        } else if (topicId == 3){
+        } else if (topicId == 3) {
             setTitle("Methods");
         } else {
             setTitle(title);
@@ -114,7 +115,6 @@ public class TopicContent extends AppCompatActivity
             }
 
             protected void onPostExecute(String content) {
-
                 contentView.setText(content);
 
             }
@@ -126,7 +126,7 @@ public class TopicContent extends AppCompatActivity
         tips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view,tip, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, tip, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -134,49 +134,51 @@ public class TopicContent extends AppCompatActivity
     }
 
 
-
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
         Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
 
         // This method checks to make sure the video was not restored already before starting buffer.
-        if(!wasRestored){
+        if (!wasRestored) {
             youTubePlayer.cueVideo(youtubePath);
-            youTubePlayer.setPlaybackEventListener(new YouTubePlayer.PlaybackEventListener() {
-                @Override
-                public void onPlaying() {
-
-                }
-
-                @Override
-                public void onPaused() {
-
-                }
-
-                @Override
-                public void onStopped() {
-
-                }
-
-                @Override
-                public void onBuffering(boolean b) {
-
-                }
-
-                @Override
-                public void onSeekTo(int i) {
-
-                }
-            });
-
+            youTubePlayer.setPlaybackEventListener(playbackEventListener);
         }
+
 
     }
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
         Log.e("Youtube", "Failed to initialize error.");
+        Toast.makeText(TopicContent.this, "Video failed to initialize. Please try reload the page.", Toast.LENGTH_SHORT);
 
 
     }
+
+    /*Provided method listens to changes in the state of the Youtube Video. I have assigned
+     * simple Toast messages to display the current state of the video to the user.*/
+    private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener(){
+        @Override
+        public void onPlaying() {
+            Toast.makeText(TopicContent.this, "Video is now playing.", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onPaused() {
+            Toast.makeText(TopicContent.this, "Video has been paused.", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onStopped() {
+        }
+
+        @Override
+        public void onBuffering(boolean b) {
+        }
+
+        @Override
+        public void onSeekTo(int i) {
+
+        }
+    };
 }

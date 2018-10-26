@@ -1,7 +1,8 @@
 package com.example.novaa.infs3634assignment;
 
-//In the Questions class, we have created a 'mQuestions' array to store questions for the Multiple Choice quiz.
+//Completed by Leslie
 
+//In the Questions class, we have created a 'mQuestions' array to store questions for the Multiple Choice quiz.
 public class Questions {
 
     public String mQuestions[] = {

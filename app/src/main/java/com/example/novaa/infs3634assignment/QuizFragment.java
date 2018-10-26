@@ -19,24 +19,17 @@ import android.widget.Toast;
 import java.util.EventListener;
 import java.util.Random;
 
-
+//Completed by Leslie, converted to fragment by Jacky
 public class   QuizFragment extends Fragment implements EventListener {
 
-    //Created buttons for the 4 multiple choice options.
     Button answer1, answer2, answer3, answer4;
-
-    //created TextView to display score count and question.
     TextView score, question;
-
-    //created a private class for Questions so it can be accessed through the Questions() method.
     private Questions mQuestions = new Questions();
     private String mAnswer;
-
-    //initialise mScore as 0 otherwise score counting will not begin from 0.
     private int mScore = 0;
-
-    //used to determine the size of the array.
     private int mQuestionLength = mQuestions.mQuestions.length;
+
+    View test;
 
     //declared the Random variable 'r' so that we can use this variable to generate a random selection of questions.
     Random r;
@@ -51,6 +44,8 @@ public class   QuizFragment extends Fragment implements EventListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_quiz, container, false);
+
+
     }
 
     @Override
@@ -59,7 +54,7 @@ public class   QuizFragment extends Fragment implements EventListener {
         //generate a random question.
         r = new Random();
 
-        //reference answer1 button to answer1 array, answer2 for answer2 array, etc.
+        //reference answer1 quizBtn to answer1 array, answer2 for answer2 array, etc.
         answer1 = (Button) view.findViewById(R.id.answer1);
         answer2 = (Button) view.findViewById(R.id.answer2);
         answer3 = (Button) view.findViewById(R.id.answer3);
@@ -68,7 +63,7 @@ public class   QuizFragment extends Fragment implements EventListener {
         score = (TextView) view.findViewById(R.id.score);
         question = (TextView) view.findViewById(R.id.question);
 
-        //create score by using mScore variable to display score count at the top of the App page.
+        //create score by using mScore variable to display score count at the top of the fragment.
         score.setText("Score: " + mScore);
 
         //generate next question randomly using this method.
@@ -76,8 +71,34 @@ public class   QuizFragment extends Fragment implements EventListener {
 
 
 
+        test = view.findViewById(R.id.quizview);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button b = test.findViewById((view.getId()));
 
-        //creates an action for when the user selects answer1 button.
+                if (b.getText() == mAnswer) {
+                    mScore++;
+                    score.setText("Score: " + mScore);
+                    updateQuestion(r.nextInt(mQuestionLength));
+                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
+
+
+                } else {
+                    gameOver();
+
+                }
+                }
+        });
+
+
+
+
+
+
+
+/*
+        //creates an action for when the user selects answer1 quizBtn.
         //If the user clicks on the first answer and it is correct, it will display "Correct!" and move on to the next question.
         //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
         answer1.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +178,7 @@ public class   QuizFragment extends Fragment implements EventListener {
                 }
 
             }
-        });
+        });*/
 
     }
 
@@ -182,7 +203,7 @@ public class   QuizFragment extends Fragment implements EventListener {
     // AlertDialog is a small window which prompts the user to choose whether they want to return to home or play again.
     // It also displays the final score for that round.
     //.setMessage: set the message to display using the given resource id.
-    //.setCancelable removes 'CANCEL' button in the AlertDialog.
+    //.setCancelable removes 'CANCEL' quizBtn in the AlertDialog.
     //.setPositiveButton allows the user to start QuizActivity activity by pressing on "NEW GAME".
 
     private void gameOver() {
@@ -195,7 +216,7 @@ public class   QuizFragment extends Fragment implements EventListener {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent = new Intent(getContext(), NavigationBar.class);
-                                intent.putExtra("button", 2);
+                                intent.putExtra("quizBtn", 2);
                                 startActivity(intent);
                                 getActivity().finish();
 

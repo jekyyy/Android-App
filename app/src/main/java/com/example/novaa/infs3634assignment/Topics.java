@@ -4,6 +4,8 @@ package com.example.novaa.infs3634assignment;
 file to display teach lesson. Each topic has an id, name and youtube path contains a youtube video
 to further enhance the students knowledge. */
 
+
+//Completed by Jacky
 public class Topics {
     private int id;
     private String name;

@@ -2,6 +2,7 @@ package com.example.novaa.infs3634assignment;
 
 import java.util.ArrayList;
 
+//Completed by Jacky
 public class TopicDatabase {
     private static ArrayList<Topics> topicsArrayList = new ArrayList<Topics>() {
         {
