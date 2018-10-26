@@ -20,7 +20,7 @@ import java.util.EventListener;
 import java.util.Random;
 
 //Completed by Leslie, converted to fragment by Jacky
-public class   QuizFragment extends Fragment implements EventListener {
+public class QuizFragment extends Fragment {
 
     Button answer1, answer2, answer3, answer4;
     TextView score, question;
@@ -29,7 +29,6 @@ public class   QuizFragment extends Fragment implements EventListener {
     private int mScore = 0;
     private int mQuestionLength = mQuestions.mQuestions.length;
 
-    View test;
 
     //declared the Random variable 'r' so that we can use this variable to generate a random selection of questions.
     Random r;
@@ -42,8 +41,14 @@ public class   QuizFragment extends Fragment implements EventListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz, container, false);
+        View v = inflater.inflate(R.layout.fragment_quiz, container, false);
+            answer1 = (Button) v.findViewById(R.id.answer1);
+            answer2 = (Button) v.findViewById(R.id.answer2);
+            answer3 = (Button) v.findViewById(R.id.answer3);
+            answer4 = (Button) v.findViewById(R.id.answer4);
+            score = (TextView) v.findViewById(R.id.score);
+            question = (TextView) v.findViewById(R.id.question);
+        return v;
 
 
     }
@@ -54,140 +59,46 @@ public class   QuizFragment extends Fragment implements EventListener {
         //generate a random question.
         r = new Random();
 
-        //reference answer1 quizBtn to answer1 array, answer2 for answer2 array, etc.
-        answer1 = (Button) view.findViewById(R.id.answer1);
-        answer2 = (Button) view.findViewById(R.id.answer2);
-        answer3 = (Button) view.findViewById(R.id.answer3);
-        answer4 = (Button) view.findViewById(R.id.answer4);
+        //creates an action for when the user selects an answer.
+        //If the user clicks on the right answer, it will display "Correct!" and move on to the next question.
+        //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
+        answer1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(answer1);
+            }
+        });
+        answer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(answer2);
+            }
+        });
+        answer3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(answer3);
+            }
+        });
+        answer4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer(answer4);
+            }
+        });
 
-        score = (TextView) view.findViewById(R.id.score);
-        question = (TextView) view.findViewById(R.id.question);
 
         //create score by using mScore variable to display score count at the top of the fragment.
         score.setText("Score: " + mScore);
 
         //generate next question randomly using this method.
         updateQuestion(r.nextInt(mQuestionLength));
-
-
-
-        test = view.findViewById(R.id.quizview);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Button b = test.findViewById((view.getId()));
-
-                if (b.getText() == mAnswer) {
-                    mScore++;
-                    score.setText("Score: " + mScore);
-                    updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
-
-
-                } else {
-                    gameOver();
-
-                }
-                }
-        });
-
-
-
-
-
-
-
-/*
-        //creates an action for when the user selects answer1 quizBtn.
-        //If the user clicks on the first answer and it is correct, it will display "Correct!" and move on to the next question.
-        //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
-        answer1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer1.getText() == mAnswer) {
-                    mScore++;
-                    score.setText("Score: " + mScore);
-                    updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
-
-
-                } else {
-                    gameOver();
-
-
-                }
-
-            }
-        });
-
-        //If the user clicks on the second answer and it is correct, it will display "Correct!" and move on to the next question.
-        //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
-        answer2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer2.getText() == mAnswer) {
-                    mScore++;
-                    score.setText("Score: " + mScore);
-                    updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
-
-
-                } else {
-                    gameOver();
-                }
-
-
-            }
-        });
-
-
-        //If the user clicks on the third answer and it is correct, it will display "Correct!" and move on to the next question.
-        //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
-        answer3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer3.getText() == mAnswer) {
-                    mScore++;
-                    score.setText("Score: " + mScore);
-                    updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
-
-
-                } else {
-                    gameOver();
-                }
-
-            }
-        });
-
-
-        //If the user clicks on the fourth answer and it is correct, it will display "Correct!" and move on to the next question.
-        //If it is incorrect, it will display 'Game Over!', and ask the user to choose whether to go back to home or play again.
-        answer4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer4.getText() == mAnswer) {
-                    mScore++;
-                    score.setText("Score: " + mScore);
-                    updateQuestion(r.nextInt(mQuestionLength));
-                    Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
-
-
-                } else {
-                    gameOver();
-                }
-
-            }
-        });*/
-
     }
-
-
 
 
     //created a private void method named 'updateQuestion'.
     //this will generate the number of questions asked, that is the number of questions correctly asked by the user.
-    private void updateQuestion ( int num){
+    private void updateQuestion(int num) {
         question.setText(mQuestions.getQuestion(num));
         answer1.setText(mQuestions.getChoice1(num));
         answer2.setText(mQuestions.getChoice2(num));
@@ -237,5 +148,21 @@ public class   QuizFragment extends Fragment implements EventListener {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
+    //Method checks whether the answer is wrong by checking the string of the button against the answer.
+    public void checkAnswer(Button b) {
+        if (b.getText() == mAnswer) {
+            mScore++;
+            score.setText("Score: " + mScore);
+            updateQuestion(r.nextInt(mQuestionLength));
+            Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
+
+
+        } else {
+            gameOver();
+
+        }
+    }
+
 }
 
